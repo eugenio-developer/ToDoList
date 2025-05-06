@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-lista-compras',
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './lista-compras.component.html',
   styleUrl: './lista-compras.component.scss'
 })
@@ -28,5 +28,12 @@ export class ListaComprasComponent {
     console.table(this.lista);
   }
 
+  riscarItem(itemLista: ItemLista){
+    itemLista.comprado = !itemLista.comprado
+  }
+
+  limparLista(){
+    this.lista = [];
+  }
 
 }
